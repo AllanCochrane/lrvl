@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $tasks = [
+        'Clean pool','Fix roof','Empty bins'
+    ];
+    return view('welcome',[
+        'tasks' => $tasks,
+        'person' => 'Fred'
+    ]);
 });
