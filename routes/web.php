@@ -20,3 +20,15 @@ Route::get('/', function () {
         'person' => 'Fred'
     ]);
 });
+
+Route::get('/authors', function () {
+    $authors = App\Author::all();
+
+    return view('authors', compact('authors'));
+});
+
+Route::get('/author/{id}', function ($id) {
+    $authors = App\Author::find($id);
+
+    return view('author', compact('author'));
+});
